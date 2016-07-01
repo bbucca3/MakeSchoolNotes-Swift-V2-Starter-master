@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+//Displays each note
+
 
 class DisplayNoteViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class DisplayNoteViewController: UIViewController {
     var note: Note?
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         
         //using the optional binding technique to unwrap the value in the note property and storing the actual value (if it exists) in a local variable named note.
@@ -36,6 +39,11 @@ class DisplayNoteViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
+        //border around the input box
+        noteContentTextView.layer.cornerRadius = 5
+        noteContentTextView.layer.borderColor = UIColor.blueColor().CGColor
+        noteContentTextView.layer.borderWidth = 1
+        self.view.addSubview(noteContentTextView)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

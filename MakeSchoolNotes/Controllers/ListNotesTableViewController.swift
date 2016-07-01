@@ -17,7 +17,7 @@ class ListNotesTableViewController: UITableViewController {
         }
     }
     
-    //load Realm
+    //load Realm and notes 
     override func viewDidLoad() {
         super.viewDidLoad()
         notes = RealmHelper.retrieveNotes()
@@ -29,8 +29,9 @@ class ListNotesTableViewController: UITableViewController {
         return notes.count
     }
     
-    //create and fill in new note values
+    //create and fill in new note values for display
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("listNotesTableViewCell", forIndexPath: indexPath) as! ListNotesTableViewCell
         
         // 1
@@ -48,7 +49,7 @@ class ListNotesTableViewController: UITableViewController {
         return cell
     }
     
-    //1 enable the table view to have additional editing modes, one of which is that the cells display the delete option when a user swipes right.
+    //1 enable the table view to have additional editing modes, one of which is that the cells display the delete option when a user swipes left.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // 2 check to see if the editingStyle is the .Delete one - there's also an .Insert
         if editingStyle == .Delete {

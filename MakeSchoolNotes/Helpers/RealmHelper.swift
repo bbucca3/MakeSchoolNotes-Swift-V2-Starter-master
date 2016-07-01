@@ -34,7 +34,7 @@ class RealmHelper {
             noteToBeUpdated.modificationTime = newNote.modificationTime
         }
     }
-    
+    //modify ascending value 
     static func retrieveNotes() -> Results<Note> {
         let realm = try! Realm()
         return realm.objects(Note).sorted("modificationTime", ascending: false)

@@ -12,7 +12,6 @@ import RealmSwift
 class ListNotesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var noteTitleLabel: UILabel!
-
     @IBOutlet weak var notePreviewLabel: UILabel!
     @IBOutlet weak var noteModificationTimeLabel: UILabel!
     
